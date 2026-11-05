@@ -1,0 +1,16 @@
+{
+  "name": "sentinelqa-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SentinelQA - Autonomous UI Testing System Monorepo",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client && npm install --prefix demo-app",
+    "dev": "concurrently -n \"server,client,demo\" -c \"blue.bold,green.bold,magenta.bold\" \"npm run dev:server\" \"npm run dev:client\" \"npm run dev:demo\"",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "dev:demo": "npm run dev --prefix demo-app"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
